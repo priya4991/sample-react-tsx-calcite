@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { applyPolyfills, defineCustomElements } from '@esri/calcite-components/dist/loader';
+import { applyPolyfills, defineCustomElements, JSX as LocalJSX} from '@esri/calcite-components/dist/loader';
+import '@esri/calcite-components/dist/calcite/calcite.css';
+
+//the following code is to allow tsx to use calcite components in a react tsx project.
+type StencilToReact<T> = {
+  [P in keyof T]?: T[P] & Omit<HTMLAttributes<Element>, 'className'> & {
+    class?: string;
+  };
+} ;
+
+declare global {
+  export namespace JSX {
+    interface IntrinsicElements extends StencilToReact<LocalJSX.IntrinsicElements> {
+    }
+  }
+}
 
 // Apply polyfills and then define the custom elements
 // polyfills are not needed if you don't support IE11 or Edge

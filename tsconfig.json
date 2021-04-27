@@ -22,8 +22,5 @@
   },
   "include": [
     "src"
-  ],
-  "files": [
-    "node_modules/@esri/calcite-components/dist/types/components.d.ts"
-  ],
+  ]
 }
