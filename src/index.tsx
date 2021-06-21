@@ -8,7 +8,8 @@ import '@esri/calcite-components/dist/calcite/calcite.css';
 
 //the following code is to allow tsx to use calcite components in a react tsx project.
 type StencilToReact<T> = {
-  [P in keyof T]?: T[P] & Omit<HTMLAttributes<Element>, 'className'> & {
+  // [P in keyof T]?: T[P] & Omit<HTMLAttributes<Element>, 'className'> & { //had to change out of this to accommodate 'key' in components
+  [P in keyof T]?: any & Omit<HTMLAttributes<Element>, 'className'> & {
     class?: string;
   };
 } ;
