@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with TSX + Calcite + ArcGIS API
+
+This project is a template to get you started on a basic React App using Calcite Components and JS API for ArcGIS.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
